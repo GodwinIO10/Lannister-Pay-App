@@ -31,10 +31,9 @@ const FCSSchema = new mongoose.Schema(
             enum: ["FLAT", "PERC", "FLAT_PERC"] 
         },
         feeValue: { 
-            if: {type: number},
+            if: {type: Number},
             then: {minimum: 0},
-            else: {type: String},
-            required: true, 
+            else: {type: String}, 
         },
         
     }, { timestamps: true }, 

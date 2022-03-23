@@ -10,16 +10,18 @@ const FCSSchema = new mongoose.Schema(
         },
         feeCurrency: { 
             type: String, 
-            required: true, 
+            required: true,
+            enum: ["NGN", "*"]
         },
         feeLocale: { 
             type: String, 
             required: true, 
+            enum: ["LOCL", "INTL", "*"]
         },
         feeEntity: { 
             type: String, 
             required: true,
-            enum: ["CREDIT-CARD", "DEBIT-CARD", "BANK-ACCOUNT", "USSD", "WALLET-ID"] 
+            enum: ["CREDIT-CARD", "DEBIT-CARD", "BANK-ACCOUNT", "USSD", "WALLET-ID", "*"] 
         },
         entityProperty: { 
             type: String, 
@@ -33,7 +35,8 @@ const FCSSchema = new mongoose.Schema(
         feeValue: { 
             if: {type: Number},
             then: {minimum: 0},
-            else: {type: String}, 
+            else: {flatValue: {type: String}},
+            else: {percValue: {type: String}},
         },
         
     }, { timestamps: true }, 

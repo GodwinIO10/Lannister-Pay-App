@@ -8,7 +8,7 @@ const feeDetail = asyncHandler (async (req, res) => {
     const feeIDExists = await UserFee.findOne({ feeID }) // uses feeID to check if feeID already exists in DB
 
     if (feeIDExists) {
-        res.status(400)
+        //res.status(400)
         throw new Error("Fee ID already exists!")
     }
 
@@ -24,7 +24,7 @@ const feeDetail = asyncHandler (async (req, res) => {
     })
 
     if (UserFeeDetails) {
-        console.log("Suucessful Entry!")
+        console.log("Successful Entry!")
         res.status(200).json({ // server is sending back to client
         
         })

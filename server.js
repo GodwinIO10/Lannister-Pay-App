@@ -1,12 +1,12 @@
 const express = require("express")
 const app = express()
 const cors = require("cors")
-// require("dotenv").config()
-// const connectDB = require("./config/db")
-// const port = process.env.PORT || 5000
+require("dotenv").config()
+const connectDB = require("./config/db")
+const port = process.env.PORT || 7000
 const feesRoute = require("./routes/feesRoute")
 const computeTransactionFeeRoute = require("./routes/computeTransactionFeeRoute")
-// const { notFound, errorHandler } = require("./middlewares/errorMiddleware")
+const { notFound, errorHandler } = require("./middlewares/errorMiddleware")
 
 
 app.use(cors())

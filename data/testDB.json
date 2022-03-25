@@ -1,0 +1,28 @@
+{
+    "FeeConfigSpec": 
+    [
+        {
+            "feeID": "AAAA1234",
+            "feeCurrency": "NGN",
+            "feeLocale": "LOCL",
+            "feeEntity": "CREDIT-CARD",
+            "entityProperty": "MASTERCARD",
+            "feeType": "PERC",
+            "feeValue": 50,
+            "flatValue": "",
+            "percValue": ""
+        }, 
+        {
+            "feeID": "AAAA7777",
+            "feeCurrency": "NGN",
+            "feeLocale": "LOCL",
+            "feeEntity": "CREDIT-CARD",
+            "entityProperty": "MASTERCARD",
+            "feeType": "FLAT",
+            "feeValue": null,
+            "flatValue": "20",
+            "percValue": "0.5"
+            }
+ 
+    ]
+}

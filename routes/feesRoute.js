@@ -1,10 +1,10 @@
 const express = require("express")
 const router = express.Router()
-const { feeDetail } = require("../controllers/feesController")
+const { feeEntry } = require("../controllers/feesController")
 
 
-
-router.post("/", feeDetail) 
+// This is /fee endpoint (POST method)
+router.post("/", feeEntry) 
 
 
 module.exports = router

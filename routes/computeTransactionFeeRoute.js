@@ -4,7 +4,7 @@ const { computeTransactionFeeInfo } = require("../controllers/computeTransaction
 
 
 
-
+// This is /compute-transaction-fee endpoint (POST method)
 router.post("/", computeTransactionFeeInfo) 
 
 

@@ -31,12 +31,12 @@ app.get("/", (req, res) => {
 })
 
 
-// specifying fee handler
-app.use("/fees", feesRoute)
+// specifying the /fee api
+app.use("/api/fees", feesRoute)
                            
 
-// specifying fee-computation handler
-app.use("/compute-transaction-fee", computeTransactionFeeRoute)
+// specifying the /compute-transaction-fee api
+app.use("/api/compute-transaction-fee", computeTransactionFeeRoute)
 
 
 // error-handling middlewares

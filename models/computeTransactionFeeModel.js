@@ -10,12 +10,12 @@ const CTFSchema = new mongoose.Schema(
         },
         Amount: { 
             type: Number,
-            minimum: 0, 
+            min: 0, 
             required: true, 
         },
         Currency: { 
             type: String, 
-            required: true, 
+            required: true,
         },
         CurrencyCountry: { 
             type: String, 
@@ -30,9 +30,9 @@ const CTFSchema = new mongoose.Schema(
         PaymentEntity: { 
             ID: {type: Number, required: true, unique: true},
             Issuer: {type: String, required: true},
-            Brand: {type: String, required: true},
+            Brand: {type: String},
             Number: {type: String, required: true},
-            SixID: {type: Number, required: true},
+            SixID: {type: String, required: true},
             Type: {type: String, required: true},
             Country: {type: String, required: true},
         },

@@ -29,6 +29,9 @@ const feeEntry = asyncHandler (async (req, res) => {
         console.log("Successful Entry!")
         res.status(200).json({ // server is sending back to client
         
+            feeLocale : customFCS.feeLocale,
+            feeEntity : customFCS.feeEntity,
+            entityProperty : customFCS.entityProperty
         })
     }
     else {

@@ -13,7 +13,7 @@ const computeTransactionFeeInfo = asyncHandler (async (req, res) => {
             res.status(400)
             throw new Error("Transaction ID already exists!")
         }
-
+/*
         TransactionAmount = Amount  // Setting Amount to TransactionAmount
     
         if (feeType == "FLAT") {
@@ -36,27 +36,38 @@ const computeTransactionFeeInfo = asyncHandler (async (req, res) => {
         }
 
         SettlementAmount = TransactionAmount - AppliedFeeValue
+    */
         
-        try {
             const TxnFeeDetails = await transactionFEE.create({
+                
+                ID,
+                Amount,
+                Currency, 
+                CurrencyCountry, 
+                Customer, 
+                PaymentEntity
+
+                /*
                 AppliedFeeID,
                 AppliedFeeValue,
                 ChargeAmount,
                 SettlementAmount
+                */
         
             })
         
             if (TxnFeeDetails) {
                 res.status(200).json({ TxnFeeDetails })
                 console.log("Sucessful Entry!")
-                console.log(TxnFeeDetails)
+                
             }
-        }
-        catch (err){
+
+            else {
                 res.status(400)
                 throw new Error("Error occured!")
             }
         })
+    
     
 
 module.exports = { computeTransactionFeeInfo }
